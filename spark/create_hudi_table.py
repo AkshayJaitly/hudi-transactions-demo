@@ -1,4 +1,5 @@
 from pyspark.sql import SparkSession
+import os
 
 spark = (
     SparkSession.builder.appName("HudiCreate")
@@ -8,7 +9,6 @@ spark = (
     .getOrCreate()
 )
 
-import os
 input_path = os.path.abspath("data/transactions_sample.csv")
 output_path = os.path.abspath("warehouse/hudi_transactions")
 
